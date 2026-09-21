@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>proxy</title></head>
+<body>
+<script>
+// WebView HTTP 代理：从浏览器网络栈发 fetch 请求
+window.proxyFetch = async function(url, method, headers, bodyBase64) {
+    try {
+        var body = bodyBase64 ? atob(bodyBase64) : null;
+        var options = { method: method, headers: headers };
+        if (body) options.body = body;
+        var response = await fetch(url, options);
+        var arrayBuffer = await response.arrayBuffer();
+        var bytes = new Uint8Array(arrayBuffer);
+        var binary = '';
+        for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+        var base64 = btoa(binary);
+        var respHeaders = {};
+        response.headers.forEach(function(v, k) { respHeaders[k] = v; });
+        return JSON.stringify({
+            statusCode: response.status,
+            headers: respHeaders,
+            body: base64
+        });
+    } catch(e) {
+        return JSON.stringify({error: e.message});
+    }
+};
+</script>
+</body>
+</html>
