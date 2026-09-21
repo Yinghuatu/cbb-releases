@@ -9976,13 +9976,13 @@ aH4:function aH4(){},
 aMR:function aMR(){},
 aMS:function aMS(){},
 aYq:function aYq(){},
-Q1(a,b){var s,r,q
+Q1(a){var s,r,q
 if(a==null||a.length===0)return a
 s=B.c.ej(a,"/object/")
 if(s<0)return a
-r=B.h.ef(b,16,2000)
+r=B.h.ef(60,1,100)
 q=B.c.cg(a,s+8)
-return B.c.a4(a,0,s)+"/render/image/"+q+"?width="+r+"&quality=70"},
+return B.c.a4(a,0,s)+"/render/image/"+q+"?quality="+r},
 aYv:function aYv(){},
 b08:function b08(){},
 b0j:function b0j(){},
@@ -60839,7 +60839,7 @@ if(a==null)return B.a7O
 s=t.p
 r=A.c([],s)
 q=a.r
-if((q==null?"":q).length!==0){q=A.Q1(q,1200)
+if((q==null?"":q).length!==0){q=A.Q1(q)
 q.toString
 r.push(A.uA(q,l,new A.b29(),B.fS,220,l,1/0))}q=a.c
 p=this.b
@@ -66566,7 +66566,7 @@ $1(a){return a.a===this.a.a},
 $S:111}
 A.kt.prototype={
 G(a){var s,r,q=null,p=A.B(a),o=this.c,n=o.r,m=(n==null?"":n).length===0,l=m&&o.w?A.bLa(o,3):A.c([],t.s),k=l.length===0,j=A.eh(12),i=t.p,h=A.c([],i)
-if(!m){n=A.Q1(n,800)
+if(!m){n=A.Q1(n)
 n.toString
 h.push(A.uA(n,q,new A.avh(p),B.fS,180,q,1/0))}n=A.c([],i)
 s=o.z
@@ -66610,14 +66610,14 @@ $S:0}
 A.aic.prototype={
 G(a){var s,r,q,p,o,n,m=null,l=this.c
 if(l.length===1){s=A.eh(8)
-l=A.Q1(B.b.gV(l),400)
+l=A.Q1(B.b.gV(l))
 l.toString
 return A.oH(s,new A.IJ(1.7777777777777777,A.uA(l,m,new A.b5N(),B.fS,m,m,m),m),B.bc)}s=A.eh(8)
 r=t.p
 q=A.c([],r)
 for(p=0;p<l.length;++p){o=A.c([],r)
 if(p>0)o.push(B.e5)
-n=A.Q1(l[p],400)
+n=A.Q1(l[p])
 n.toString
 o.push(new A.oW(1,B.ik,new A.IJ(1,A.uA(n,m,new A.b5O(),B.fS,m,m,m),m),m))
 B.b.J(q,o)}return A.oH(s,A.c1(q,B.r,B.p,B.t,0),B.bc)}}
@@ -66759,7 +66759,7 @@ if(o!=null&&o.length!==0){n=p.e
 r=A.B(a).ax
 q=r.d
 r=q==null?r.b:q
-q=A.Q1(o,120)
+q=A.Q1(o)
 o=q==null?o:q
 q=n*2
 return A.bqV(r,new A.a_q(A.uA(o,null,new A.b0h(p,s),B.fS,q,new A.b0i(p),q),null),n)}return p.a8a(a,s)},
@@ -66896,7 +66896,7 @@ n=!n?p.gaRh():o
 m=A.eh(8)
 r=p.d
 r===$&&A.b()
-r=A.Q1(r,1200)
+r=A.Q1(r)
 if(r==null)r=p.d
 q=t.p
 n=A.c([A.h2(B.bk,A.oH(m,A.uA(r,1200,new A.b9L(a),B.lS,o,new A.b9M(),o),B.bc),B.H,!1,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,n,o,o,o,o,o,o)],q)
