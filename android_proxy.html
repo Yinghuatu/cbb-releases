@@ -3,13 +3,19 @@
 <head><title>proxy</title></head>
 <body>
 <script>
-// WebView HTTP 代理：从浏览器网络栈发 fetch 请求
+// WebView HTTP 代理：通过 CORS 代理转发请求到 Supabase
+// corsproxy.io 不在 Cloudflare 上，不会被 DPI 封锁
 window.proxyFetch = async function(url, method, headers, bodyBase64) {
+    // Supabase 请求走 CORS 代理
+    var proxyUrl = url;
+    if (url.indexOf('supabase.co') !== -1) {
+        proxyUrl = 'https://corsproxy.io/?url=' + encodeURIComponent(url);
+    }
     try {
         var body = bodyBase64 ? atob(bodyBase64) : null;
         var options = { method: method, headers: headers };
         if (body) options.body = body;
-        var response = await fetch(url, options);
+        var response = await fetch(proxyUrl, options);
         var arrayBuffer = await response.arrayBuffer();
         var bytes = new Uint8Array(arrayBuffer);
         var binary = '';
