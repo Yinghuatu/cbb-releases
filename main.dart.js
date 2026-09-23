@@ -9082,7 +9082,7 @@ var $async$bv7=A.o(function(a,b){if(a===1)return A.p(b,r)
 for(;;)switch(s){case 0:if($.a1==null)A.Sm()
 $.a1.toString
 s=2
-return A.k($.bwL().Qs(0,".env"),$async$bv7)
+return A.k($.bwL().Qs(0,"assets/app_env"),$async$bv7)
 case 2:$.eV=new A.bva()
 $.y5=new A.bvb()
 A.c7S(new A.bvc(),new A.bvd(),t.H)
