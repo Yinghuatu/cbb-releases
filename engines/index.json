@@ -1,0 +1,25 @@
+{
+    "version":  1,
+    "updatedAt":  "2026-11-24T16:31:20Z",
+    "engines":  [
+                    {
+                        "id":  "wine_box64_turnip",
+                        "name":  "Wine Box64 · Turnip",
+                        "description":  "面向高通 Adreno 设备的 Vulkan 加速方案，配合 DXVK 运行 DirectX 程序，骁龙机型性能优先。",
+                        "version":  "9.15",
+                        "sizeBytes":  148167906,
+                        "downloadUrl":  "https://github.com/Yinghuatu/cbb-releases/releases/download/engines-v1/wine_box64_turnip-9.15-arm64.zip",
+                        "sha256":  "65178401181d6fcb0c7d7b117b863269a13dc669fd7f9a269587a1dd9a4f5d81",
+                        "graphicsDriver":  "Turnip (Adreno Vulkan)",
+                        "abi":  "arm64-v8a",
+                        "capabilities":  [
+                                             "Turnip Vulkan",
+                                             "DXVK",
+                                             "Box64",
+                                             "DirectX 9/10/11"
+                                         ],
+                        "entryFile":  "bin/wine",
+                        "recommended":  true
+                    }
+                ]
+}
